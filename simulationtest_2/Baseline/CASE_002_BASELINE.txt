@@ -1,0 +1,44 @@
+=========================================
+EMERGENCY DEPARTMENT SIMULATION RESULT
+=========================================
+
+Scenario               : BASELINE
+Number of Doctors      : 3
+Patients Served        : 10
+Average Waiting Time   : 15.00
+Average System Time    : 25.50
+Average Service Time   : 10.50
+Average InterArrival   : 1.40
+Probability Wait       : 70.00 %
+Makespan               : 44.00
+Overall Utilization    : 79.55 %
+
+=========================================
+PATIENT DETAILS
+=========================================
+ID    Arrival  RN_Type  Type       Priority Service    Doctor   Start    End      Wait    
+-------------------------------------------------------------------------------
+2     0        8        RED        3        15         1        0        15       0       
+10    14       15       RED        3        30         2        14       44       0       
+6     7        30       YELLOW     2        15         3        7        22       0       
+7     8        30       YELLOW     2        10         1        15       25       7       
+1     0        54       GREEN      1        8          3        22       30       22      
+3     1        78       GREEN      1        4          1        25       29       24      
+4     4        73       GREEN      1        6          1        29       35       25      
+5     5        68       GREEN      1        6          3        30       36       25      
+8     11       93       GREEN      1        6          1        35       41       24      
+9     13       73       GREEN      1        5          3        36       41       23      
+
+=========================================
+DEPARTURE EVENTS
+=========================================
+Customer 2   departed at minute 15   
+Customer 10  departed at minute 44   
+Customer 6   departed at minute 22   
+Customer 7   departed at minute 25   
+Customer 1   departed at minute 30   
+Customer 3   departed at minute 29   
+Customer 4   departed at minute 35   
+Customer 5   departed at minute 36   
+Customer 8   departed at minute 41   
+Customer 9   departed at minute 41   
