@@ -1,27 +1,23 @@
 function compareScenario(a,b)
 
-fprintf('\n');
-fprintf('Average Waiting Time\n');
-fprintf('Scenario1 : %.2f\n',a.avgWaiting);
-fprintf('Scenario2 : %.2f\n',b.avgWaiting);
+disp(' ');
+disp('========== COMPARISON ==========');
 
-fprintf('\n');
-fprintf('Average Queue Length\n');
-fprintf('Scenario1 : %.2f\n',a.avgQueue);
-fprintf('Scenario2 : %.2f\n',b.avgQueue);
+fprintf('\nAverage Waiting Time\n');
+fprintf('3 Doctors : %.2f\n',a.avgWaiting);
+fprintf('4 Doctors : %.2f\n',b.avgWaiting);
 
-fprintf('\n');
-fprintf('Doctor Utilization\n');
-fprintf('Scenario1 : %.2f%%\n',...
-        a.utilization*100);
-fprintf('Scenario2 : %.2f%%\n',...
-        b.utilization*100);
+fprintf('\nAverage Queue Length\n');
+fprintf('3 Doctors : %.2f\n',a.avgQueue);
+fprintf('4 Doctors : %.2f\n',b.avgQueue);
 
-fprintf('\n');
-fprintf('Patients Served\n');
-fprintf('Scenario1 : %d\n',...
-        a.totalServed);
-fprintf('Scenario2 : %d\n',...
-        b.totalServed);
+fprintf('\nDoctor Utilization\n');
+fprintf('3 Doctors : %.2f%%\n',a.utilization*100);
+fprintf('4 Doctors : %.2f%%\n',b.utilization*100);
 
-end
+fprintf('\nPatients Served\n');
+fprintf('3 Doctors : %d\n',a.totalServed);
+fprintf('4 Doctors : %d\n',b.totalServed);
+
+disp(' ');
+disp('===============================');
