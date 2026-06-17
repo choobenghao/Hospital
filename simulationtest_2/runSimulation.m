@@ -1,4 +1,4 @@
-function runSimulation(custAmount,peakchoice,numGenChoice,numDoctors)
+function runSimulation(custAmount,peakchoice,numGenChoice,numDoctors, scenarioName)
 
 N = custAmount;
 
@@ -395,6 +395,179 @@ fprintf('Customer %d departed at minute %d\n',...
         EndTime(i));
 
 end
+
+AverageWaitingTime = mean(WaitingTime);
+AverageSystemTime = mean(SystemTime);
+AverageServiceTime = mean(ServiceTime);
+AverageInterArrival = mean(IA);
+NumWait = sum(WaitingTime > 0);
+
+ProbabilityWait = ...
+    (NumWait/N)*100;
+
+Makespan = max(EndTime);
+
+DoctorUtilization = ...
+    (DoctorBusyTime/Makespan)*100;
+
+disp(' ');
+disp('==============================================');
+disp('DOCTOR UTILIZATION');
+disp('==============================================');
+
+for d = 1:numDoctors
+
+fprintf('Doctor %d Utilization : %.2f %%\n',...
+        d,...
+        DoctorUtilization(d));
+
+end
+
+OverallUtilization = ...
+(sum(DoctorBusyTime) / ...
+(Makespan*numDoctors))*100;
+
+disp(' ');
+disp('==============================================');
+disp('PERFORMANCE METRICS');
+disp('==============================================');
+
+fprintf('Patients Served      : %d\n',N);
+
+fprintf('Average Waiting Time : %.2f\n',...
+        AverageWaitingTime);
+
+fprintf('Average System Time  : %.2f\n',...
+        AverageSystemTime);
+
+fprintf('Average Service Time : %.2f\n',...
+        AverageServiceTime);
+
+fprintf('Average InterArrival : %.2f\n',...
+        AverageInterArrival);
+
+fprintf('Probability Wait     : %.2f %%\n',...
+        ProbabilityWait);
+
+fprintf('Makespan             : %.2f\n',...
+        Makespan);
+
+fprintf('Overall Utilization  : %.2f %%\n',...
+        OverallUtilization);
+
+
+disp(' ');
+
+SaveChoice = input(...
+'Do you want to save this simulation? (1=Yes, 2=No): ');
+
+if SaveChoice == 1
+
+    if strcmp(scenarioName,'BASELINE')
+
+    FolderName = 'Baseline';
+
+    else
+
+        FolderName = 'Improved';
+
+    end
+
+    if exist(FolderName) == 0
+
+        mkdir(FolderName);
+
+    end
+
+    files = dir([FolderName filesep '*.txt']);
+
+    CaseNumber = length(files) + 1;
+
+    FileName = sprintf(...
+    'CASE_%03d_%s.txt',...
+    CaseNumber,...
+    scenarioName);
+
+    FullFileName = ...
+    [FolderName filesep FileName];
+
+    fid = fopen(FullFileName,'w');
+
+    fprintf(fid,'=========================================\n');
+    fprintf(fid,'EMERGENCY DEPARTMENT SIMULATION RESULT\n');
+    fprintf(fid,'=========================================\n\n');
+
+    fprintf(fid,'Scenario               : %s\n',scenarioName);
+    fprintf(fid,'Number of Doctors      : %d\n',numDoctors);
+    fprintf(fid,'Patients Served        : %d\n',N);
+
+    fprintf(fid,'Average Waiting Time   : %.2f\n',AverageWaitingTime);
+    fprintf(fid,'Average System Time    : %.2f\n',AverageSystemTime);
+    fprintf(fid,'Average Service Time   : %.2f\n',AverageServiceTime);
+    fprintf(fid,'Average InterArrival   : %.2f\n',AverageInterArrival);
+    fprintf(fid,'Probability Wait       : %.2f %%\n',ProbabilityWait);
+    fprintf(fid,'Makespan               : %.2f\n',Makespan);
+    fprintf(fid,'Overall Utilization    : %.2f %%\n',OverallUtilization);
+
+    fprintf(fid,'\n');
+    fprintf(fid,'=========================================\n');
+    fprintf(fid,'PATIENT DETAILS\n');
+    fprintf(fid,'=========================================\n');
+
+    fprintf(fid,...
+    '%-5s %-8s %-8s %-10s %-8s %-10s %-8s %-8s %-8s %-8s\n',...
+    'ID',...
+    'Arrival',...
+    'RN_Type',...
+    'Type',...
+    'Priority',...
+    'Service',...
+    'Doctor',...
+    'Start',...
+    'End',...
+    'Wait');
+
+    fprintf(fid,...
+    '-------------------------------------------------------------------------------\n');
+
+    for i = 1:N
+
+        fprintf(fid,...
+        '%-5d %-8d %-8d %-10s %-8d %-10d %-8d %-8d %-8d %-8d\n',...
+        SortedID(i),...
+        SortedArrival(i),...
+        RN_Type(SortedID(i)),...
+        SortedType{i},...
+        SortedPriority(i),...
+        SortedService(i),...
+        DoctorAssigned(i),...
+        StartTime(i),...
+        EndTime(i),...
+        WaitingTime(i));
+
+    end
+
+    fprintf(fid,'\n');
+    fprintf(fid,'=========================================\n');
+    fprintf(fid,'DEPARTURE EVENTS\n');
+    fprintf(fid,'=========================================\n');
+
+    for i = 1:N
+
+        fprintf(fid,...
+        'Customer %-3d departed at minute %-5d\n',...
+        SortedID(i),...
+        EndTime(i));
+
+    end
+
+    fclose(fid);
+
+    fprintf('\nResult Saved : %s\n',...
+        FullFileName);
+
+end
+
 
 
 end

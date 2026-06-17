@@ -80,12 +80,14 @@ while 1
                 numGenChoice = input('Enter your choice:')
 
                 numDoctors = 3;
+                scenarioName = 'BASELINE';
 
                 runSimulation( ...
                     custAmount,...
                     peakchoice,...
                     numGenChoice,...
-                    numDoctors);
+                    numDoctors,...
+                    scenarioName);
 
             case 4
 
@@ -160,11 +162,13 @@ while 1
                 disp('3. Uniform Distribution Generator (LCG-based)');
                 numGenChoice = input('Enter your choice:')
                 numDoctors = 4;
+                scenarioName = 'IMPROVED' ;
                 runSimulation( ...
                     custAmount,...
                     peakchoice,...
                     numGenChoice,...
-                    numDoctors);
+                    numDoctors,...
+                    scenarioName);
 
             case 4
 
@@ -185,14 +189,94 @@ while 1
 
         disp(' ');
         disp('Compare Scenario Module');
+        compareScenario;
 
     % =====================================
     % PREVIOUS RESULTS
     % =====================================
     case 4
 
-        disp(' ');
-        disp('Previous Results Module');
+        while 1
+
+            disp(' ');
+            disp('=================================');
+            disp('PREVIOUS RESULTS');
+            disp('=================================');
+
+            BaselineFiles = dir('Baseline');
+            ImprovedFiles = dir('Improved');
+
+            
+
+            TotalFiles = 0;
+
+            FileList = {};
+
+            for i = 1:length(BaselineFiles)
+
+                TotalFiles = TotalFiles + 1;
+
+                FileList{TotalFiles} = ...
+                ['Baseline\' BaselineFiles(i).name];
+
+                fprintf('%d. %s\n',...
+                        TotalFiles,...
+                        FileList{TotalFiles});
+
+            end
+
+            for i = 1:length(ImprovedFiles)
+
+                TotalFiles = TotalFiles + 1;
+
+                FileList{TotalFiles} = ...
+                ['Improved\' ImprovedFiles(i).name];
+
+                fprintf('%d. %s\n',...
+                        TotalFiles,...
+                        FileList{TotalFiles});
+
+            end
+
+            fprintf('%d. Back\n',TotalFiles+1);
+
+            disp(' ');
+
+            choice = input('Select File : ');
+
+            if choice == TotalFiles+1
+
+                break;
+
+            end
+
+            if choice < 1 || choice > TotalFiles
+
+                disp('Invalid Selection');
+                continue;
+
+            end
+
+            FileName = FileList{choice};
+
+            fid = fopen(FileName,'r');
+
+            content = fscanf(fid,'%c');
+
+            fclose(fid);
+
+            disp(' ');
+            disp('=================================');
+            disp('FILE CONTENT');
+            disp('=================================');
+
+            fprintf('%s\n',content);
+
+
+            disp(' ');
+            input('Press ENTER to return...','s');
+
+        end
 
     % =====================================
     % EXIT

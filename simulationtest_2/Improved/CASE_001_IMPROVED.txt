@@ -1,0 +1,22 @@
+Scenario : IMPROVED
+Patients Served : 10
+Average Waiting Time : 9.00
+Average System Time : 19.70
+Average Service Time : 10.70
+Average InterArrival : 3.30
+Probability Wait : 50.00 %
+Makespan : 53.00
+Overall Utilization : 50.47 %
+
+EVENT TABLE
+
+3 1 7 17 0
+4 2 9 29 0
+6 3 19 39 0
+10 4 33 53 0
+5 1 17 27 3
+9 1 29 35 0
+1 2 29 35 29
+2 1 35 39 31
+7 2 35 39 13
+8 1 39 46 14
