@@ -1,6 +1,8 @@
 clc;
 clear;
 
+setprintlimit(100000)
+
 while 1
 
     disp(' ');
@@ -203,14 +205,13 @@ while 1
             disp('PREVIOUS RESULTS');
             disp('=================================');
 
-            BaselineFiles = dir('Baseline');
-            ImprovedFiles = dir('Improved');
-
-            
-
             TotalFiles = 0;
-
             FileList = {};
+
+            % =========================
+            % BASELINE
+            % =========================
+            BaselineFiles = dir('Baseline\*.txt');
 
             for i = 1:length(BaselineFiles)
 
@@ -225,6 +226,11 @@ while 1
 
             end
 
+            % =========================
+            % IMPROVED
+            % =========================
+            ImprovedFiles = dir('Improved\*.txt');
+
             for i = 1:length(ImprovedFiles)
 
                 TotalFiles = TotalFiles + 1;
@@ -238,6 +244,27 @@ while 1
 
             end
 
+            % =========================
+            % COMPARISON
+            % =========================
+            ComparisonFiles = dir('Comparison\*.txt');
+
+            for i = 1:length(ComparisonFiles)
+
+                TotalFiles = TotalFiles + 1;
+
+                FileList{TotalFiles} = ...
+                ['Comparison\' ComparisonFiles(i).name];
+
+                fprintf('%d. %s\n',...
+                        TotalFiles,...
+                        FileList{TotalFiles});
+
+            end
+
+            % =========================
+            % BACK
+            % =========================
             fprintf('%d. Back\n',TotalFiles+1);
 
             disp(' ');
@@ -261,17 +288,23 @@ while 1
 
             fid = fopen(FileName,'r');
 
-            content = fscanf(fid,'%c');
+            if fid == -1
 
-            fclose(fid);
+                disp('Unable to Open File');
+                continue;
+
+            end
 
             disp(' ');
             disp('=================================');
             disp('FILE CONTENT');
             disp('=================================');
 
-            fprintf('%s\n',content);
+            content = fscanf(fid,'%c');
 
+            disp(content);
+
+            fclose(fid);
 
             disp(' ');
             input('Press ENTER to return...','s');
@@ -283,7 +316,7 @@ while 1
     % =====================================
     case 5
 
-        disp('System Terminated');
+        disp('Thank You! See you Next Time!! ^u^');
         break;
 
     otherwise
