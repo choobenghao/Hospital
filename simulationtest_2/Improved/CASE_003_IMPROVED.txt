@@ -1,0 +1,204 @@
+=========================================
+EMERGENCY DEPARTMENT SIMULATION RESULT
+=========================================
+
+Scenario               : IMPROVED
+Number of Doctors      : 4
+Patients Served        : 90
+Average Waiting Time   : 126.17
+Average System Time    : 136.36
+Average Service Time   : 10.19
+Average InterArrival   : 1.48
+Probability Wait       : 85.56 %
+Makespan               : 287.00
+Overall Utilization    : 79.88 %
+
+=========================================
+PATIENT DETAILS
+=========================================
+ID    Arrival  RN_Type  Type       Priority Service    Doctor   Start    End      Wait    
+-------------------------------------------------------------------------------
+1     0        3        RED        3        20         1        0        20       0       
+7     5        1        RED        3        20         2        5        25       0       
+8     6        17       RED        3        25         3        6        31       0       
+9     7        10       RED        3        20         4        7        27       0       
+13    11       13       RED        3        10         1        20       30       9       
+16    14       9        RED        3        20         2        25       45       11      
+33    45       7        RED        3        20         4        45       65       0       
+34    46       15       RED        3        15         1        46       61       0       
+35    47       14       RED        3        20         3        47       67       0       
+61    85       5        RED        3        25         2        85       110      0       
+67    97       7        RED        3        15         1        97       112      0       
+70    101      8        RED        3        25         4        101      126      0       
+71    104      9        RED        3        20         3        104      124      0       
+72    106      10       RED        3        20         2        110      130      4       
+74    108      16       RED        3        30         1        112      142      4       
+81    119      4        RED        3        20         3        124      144      5       
+85    126      14       RED        3        20         4        126      146      0       
+89    132      10       RED        3        10         2        132      142      0       
+4     2        25       YELLOW     2        6          1        142      148      140     
+2     2        27       YELLOW     2        10         2        142      152      140     
+3     2        36       YELLOW     2        8          3        144      152      142     
+10    9        37       YELLOW     2        12         4        146      158      137     
+14    12       30       YELLOW     2        12         1        148      160      136     
+18    18       26       YELLOW     2        10         2        152      162      134     
+22    24       37       YELLOW     2        10         3        152      162      128     
+23    25       39       YELLOW     2        12         4        158      170      133     
+24    26       38       YELLOW     2        8          1        160      168      134     
+26    30       36       YELLOW     2        8          2        162      170      132     
+27    33       38       YELLOW     2        12         3        162      174      129     
+30    41       31       YELLOW     2        10         1        168      178      127     
+40    53       47       YELLOW     2        12         2        170      182      117     
+41    54       41       YELLOW     2        15         4        170      185      116     
+45    62       23       YELLOW     2        10         3        174      184      112     
+53    72       28       YELLOW     2        15         1        178      193      106     
+54    74       34       YELLOW     2        8          2        182      190      108     
+55    77       45       YELLOW     2        12         3        184      196      107     
+57    80       40       YELLOW     2        10         4        185      195      105     
+60    84       44       YELLOW     2        10         2        190      200      106     
+62    86       30       YELLOW     2        10         1        193      203      107     
+66    95       34       YELLOW     2        15         4        195      210      100     
+69    100      24       YELLOW     2        8          3        196      204      96      
+73    106      49       YELLOW     2        15         2        200      215      94      
+75    111      40       YELLOW     2        10         1        203      213      92      
+80    116      32       YELLOW     2        10         3        204      214      88      
+82    119      42       YELLOW     2        8          4        210      218      91      
+83    122      42       YELLOW     2        10         1        213      223      91      
+86    128      42       YELLOW     2        12         3        214      226      86      
+88    132      43       YELLOW     2        6          2        215      221      83      
+5     4        87       GREEN      1        6          4        218      224      214     
+6     4        65       GREEN      1        6          2        221      227      217     
+11    11       99       GREEN      1        7          1        223      230      212     
+12    11       82       GREEN      1        6          4        224      230      213     
+15    13       98       GREEN      1        4          3        226      230      213     
+17    16       93       GREEN      1        5          2        227      232      211     
+19    19       63       GREEN      1        6          1        230      236      211     
+20    20       75       GREEN      1        6          3        230      236      210     
+21    23       82       GREEN      1        5          4        230      235      207     
+25    27       54       GREEN      1        7          2        232      239      205     
+28    35       89       GREEN      1        6          4        235      241      200     
+29    38       50       GREEN      1        7          1        236      243      198     
+31    41       72       GREEN      1        7          3        236      243      195     
+32    43       90       GREEN      1        5          2        239      244      196     
+36    48       76       GREEN      1        5          4        241      246      193     
+37    50       57       GREEN      1        7          1        243      250      193     
+38    51       92       GREEN      1        7          3        243      250      192     
+39    53       75       GREEN      1        6          2        244      250      191     
+42    54       65       GREEN      1        7          4        246      253      192     
+43    56       86       GREEN      1        6          1        250      256      194     
+44    59       95       GREEN      1        6          2        250      256      191     
+46    62       74       GREEN      1        7          3        250      257      188     
+47    63       51       GREEN      1        4          4        253      257      190     
+48    65       64       GREEN      1        6          1        256      262      191     
+49    66       84       GREEN      1        5          2        256      261      190     
+50    68       52       GREEN      1        7          3        257      264      189     
+51    68       57       GREEN      1        6          4        257      263      189     
+52    71       83       GREEN      1        6          2        261      267      190     
+56    78       93       GREEN      1        4          1        262      266      184     
+58    83       84       GREEN      1        5          4        263      268      180     
+59    84       99       GREEN      1        4          3        264      268      180     
+63    88       71       GREEN      1        5          1        266      271      178     
+64    90       90       GREEN      1        7          2        267      274      177     
+65    92       62       GREEN      1        6          3        268      274      176     
+68    98       77       GREEN      1        7          4        268      275      170     
+76    114      52       GREEN      1        6          1        271      277      157     
+77    115      61       GREEN      1        7          2        274      281      159     
+78    115      83       GREEN      1        6          3        274      280      159     
+79    116      84       GREEN      1        8          4        275      283      159     
+84    124      85       GREEN      1        4          1        277      281      153     
+87    130      79       GREEN      1        7          3        280      287      150     
+90    133      91       GREEN      1        4          1        281      285      148     
+
+=========================================
+DEPARTURE EVENTS
+=========================================
+Customer 1   departed at minute 20   
+Customer 7   departed at minute 25   
+Customer 8   departed at minute 31   
+Customer 9   departed at minute 27   
+Customer 13  departed at minute 30   
+Customer 16  departed at minute 45   
+Customer 33  departed at minute 65   
+Customer 34  departed at minute 61   
+Customer 35  departed at minute 67   
+Customer 61  departed at minute 110  
+Customer 67  departed at minute 112  
+Customer 70  departed at minute 126  
+Customer 71  departed at minute 124  
+Customer 72  departed at minute 130  
+Customer 74  departed at minute 142  
+Customer 81  departed at minute 144  
+Customer 85  departed at minute 146  
+Customer 89  departed at minute 142  
+Customer 4   departed at minute 148  
+Customer 2   departed at minute 152  
+Customer 3   departed at minute 152  
+Customer 10  departed at minute 158  
+Customer 14  departed at minute 160  
+Customer 18  departed at minute 162  
+Customer 22  departed at minute 162  
+Customer 23  departed at minute 170  
+Customer 24  departed at minute 168  
+Customer 26  departed at minute 170  
+Customer 27  departed at minute 174  
+Customer 30  departed at minute 178  
+Customer 40  departed at minute 182  
+Customer 41  departed at minute 185  
+Customer 45  departed at minute 184  
+Customer 53  departed at minute 193  
+Customer 54  departed at minute 190  
+Customer 55  departed at minute 196  
+Customer 57  departed at minute 195  
+Customer 60  departed at minute 200  
+Customer 62  departed at minute 203  
+Customer 66  departed at minute 210  
+Customer 69  departed at minute 204  
+Customer 73  departed at minute 215  
+Customer 75  departed at minute 213  
+Customer 80  departed at minute 214  
+Customer 82  departed at minute 218  
+Customer 83  departed at minute 223  
+Customer 86  departed at minute 226  
+Customer 88  departed at minute 221  
+Customer 5   departed at minute 224  
+Customer 6   departed at minute 227  
+Customer 11  departed at minute 230  
+Customer 12  departed at minute 230  
+Customer 15  departed at minute 230  
+Customer 17  departed at minute 232  
+Customer 19  departed at minute 236  
+Customer 20  departed at minute 236  
+Customer 21  departed at minute 235  
+Customer 25  departed at minute 239  
+Customer 28  departed at minute 241  
+Customer 29  departed at minute 243  
+Customer 31  departed at minute 243  
+Customer 32  departed at minute 244  
+Customer 36  departed at minute 246  
+Customer 37  departed at minute 250  
+Customer 38  departed at minute 250  
+Customer 39  departed at minute 250  
+Customer 42  departed at minute 253  
+Customer 43  departed at minute 256  
+Customer 44  departed at minute 256  
+Customer 46  departed at minute 257  
+Customer 47  departed at minute 257  
+Customer 48  departed at minute 262  
+Customer 49  departed at minute 261  
+Customer 50  departed at minute 264  
+Customer 51  departed at minute 263  
+Customer 52  departed at minute 267  
+Customer 56  departed at minute 266  
+Customer 58  departed at minute 268  
+Customer 59  departed at minute 268  
+Customer 63  departed at minute 271  
+Customer 64  departed at minute 274  
+Customer 65  departed at minute 274  
+Customer 68  departed at minute 275  
+Customer 76  departed at minute 277  
+Customer 77  departed at minute 281  
+Customer 78  departed at minute 280  
+Customer 79  departed at minute 283  
+Customer 84  departed at minute 281  
+Customer 87  departed at minute 287  
+Customer 90  departed at minute 285  

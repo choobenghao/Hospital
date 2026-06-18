@@ -1,0 +1,44 @@
+=========================================
+EMERGENCY DEPARTMENT SIMULATION RESULT
+=========================================
+
+Scenario               : IMPROVED
+Number of Doctors      : 4
+Patients Served        : 10
+Average Waiting Time   : 5.00
+Average System Time    : 16.70
+Average Service Time   : 11.70
+Average InterArrival   : 2.90
+Probability Wait       : 40.00 %
+Makespan               : 40.00
+Overall Utilization    : 73.12 %
+
+=========================================
+PATIENT DETAILS
+=========================================
+ID    Arrival  RN_Type  Type       Priority Service    Doctor   Start    End      Wait    
+-------------------------------------------------------------------------------
+2     2        5        RED        3        20         1        2        22       0       
+6     13       11       RED        3        25         2        13       38       0       
+1     0        35       YELLOW     2        12         3        0        12       0       
+5     10       38       YELLOW     2        12         4        10       22       0       
+7     17       25       YELLOW     2        12         3        17       29       0       
+9     24       26       YELLOW     2        12         1        24       36       0       
+3     5        95       GREEN      1        6          4        22       28       17      
+4     8        71       GREEN      1        6          4        28       34       20      
+8     21       94       GREEN      1        6          3        29       35       8       
+10    29       93       GREEN      1        6          4        34       40       5       
+
+=========================================
+DEPARTURE EVENTS
+=========================================
+Customer 2   departed at minute 22   
+Customer 6   departed at minute 38   
+Customer 1   departed at minute 12   
+Customer 5   departed at minute 22   
+Customer 7   departed at minute 29   
+Customer 9   departed at minute 36   
+Customer 3   departed at minute 28   
+Customer 4   departed at minute 34   
+Customer 8   departed at minute 35   
+Customer 10  departed at minute 40   

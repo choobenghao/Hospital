@@ -1,0 +1,76 @@
+=========================================
+COMPARISON DATASET
+=========================================
+
+ID    RN_IA    IA    Arr    RN_Type  Type       Priority RN_Service Service 
+1     0        0     0      39       YELLOW     2        18         8       
+2     2        0     0      70       GREEN      1        4          4       
+3     54       2     2      74       GREEN      1        75         7       
+4     94       3     5      48       YELLOW     2        95         15      
+5     11       0     5      69       GREEN      1        15         5       
+6     32       1     6      49       YELLOW     2        8          6       
+7     75       2     8      90       GREEN      1        0          4       
+8     46       1     9      94       GREEN      1        19         5       
+9     54       2     11     86       GREEN      1        62         6       
+10    1        0     11     54       GREEN      1        75         7       
+
+=========================================
+BASELINE RESULT (3 DOCTORS)
+=========================================
+
+Average Waiting Time : 6.30
+Average System Time  : 13.00
+Probability Wait     : 70.00 %
+Makespan             : 28.00
+Utilization          : 79.76 %
+
+=========================================
+BASELINE EVENT TABLE
+=========================================
+
+ID    Doc    Arr    Start    End      Wait    
+1     1      0      0        8        0       
+4     2      5      5        20       0       
+6     3      6      6        12       0       
+2     1      0      8        12       8       
+3     1      2      12       19       10      
+5     3      5      12       17       7       
+7     3      8      17       21       9       
+8     1      9      19       24       10      
+9     2      11     20       26       9       
+10    3      11     21       28       10      
+
+=========================================
+IMPROVED RESULT (4 DOCTORS)
+=========================================
+
+Average Waiting Time : 1.70
+Average System Time  : 8.40
+Probability Wait     : 60.00 %
+Makespan             : 22.00
+Utilization          : 76.14 %
+
+=========================================
+IMPROVED EVENT TABLE
+=========================================
+
+ID    Doc    Arr    Start    End      Wait    
+1     1      0      0        8        0       
+4     2      5      5        20       0       
+6     3      6      6        12       0       
+2     4      0      0        4        0       
+3     4      2      4        11       2       
+5     1      5      8        13       3       
+7     4      8      11       15       3       
+8     3      9      12       17       3       
+9     1      11     13       19       2       
+10    4      11     15       22       4       
+
+=========================================
+SCENARIO COMPARISON
+=========================================
+
+Waiting Time Improvement : 73.02 %
+System Time Improvement  : 35.38 %
+Makespan Improvement     : 21.43 %
+Probability Reduction    : 14.29 %

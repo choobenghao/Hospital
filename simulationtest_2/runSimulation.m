@@ -1,6 +1,10 @@
 function runSimulation(custAmount,peakchoice,numGenChoice,numDoctors, scenarioName)
 
 N = custAmount;
+seed = 12345;
+a = 1103515245;
+c = 12345;
+m = 32768;
 
 RN_IA = zeros(N,1);
 IA = zeros(N,1);
@@ -24,11 +28,30 @@ for i = 2:N
     % Random Number Generator
     switch numGenChoice
 
+        % =================================
+        % 1. Default rand()
+        % =================================
         case 1
             RN_IA(i) = floor(rand()*100);
 
-        otherwise
-            RN_IA(i) = randi([0 99]);
+        % =================================
+        % 2. Linear Congruential Generator
+        % =================================
+        case 2
+
+            seed = mod(a*seed + c,m);
+
+            RN_IA(i) = mod(seed,100);
+
+        % =================================
+        % 3. Uniform Distribution (LCG)
+        % =================================
+        case 3
+            seed = mod(a*seed + c,m);
+
+            U = seed/m;
+
+            RN_IA(i) = floor(U*100);
 
     end
 
@@ -427,6 +450,11 @@ OverallUtilization = ...
 (sum(DoctorBusyTime) / ...
 (Makespan*numDoctors))*100;
 
+PatientsInQueue = sum(WaitingTime > 0);
+
+AverageQueueLength = ...
+PatientsInQueue / N;
+
 disp(' ');
 disp('==============================================');
 disp('PERFORMANCE METRICS');
@@ -454,6 +482,9 @@ fprintf('Makespan             : %.2f\n',...
 
 fprintf('Overall Utilization  : %.2f %%\n',...
         OverallUtilization);
+
+fprintf('Average Queue Length : %.2f\n',...
+        AverageQueueLength);
 
 
 disp(' ');
@@ -507,6 +538,7 @@ if SaveChoice == 1
     fprintf(fid,'Average InterArrival   : %.2f\n',AverageInterArrival);
     fprintf(fid,'Probability Wait       : %.2f %%\n',ProbabilityWait);
     fprintf(fid,'Makespan               : %.2f\n',Makespan);
+    fprintf(fid,'Average Queue Length : %.2f\n',AverageQueueLength);
     fprintf(fid,'Overall Utilization    : %.2f %%\n',OverallUtilization);
 
     fprintf(fid,'\n');
